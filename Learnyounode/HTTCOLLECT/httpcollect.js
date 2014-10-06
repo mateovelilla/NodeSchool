@@ -1,10 +1,8 @@
-/*
-*Este ejercicio es similar al ejercicio de http client la diferencia es que
+/*Este ejercicio es similar al ejercicio de http client la diferencia es que
 * hay que utilizar un modulo instalado atravez del gestor de paquetes npm (Node package manager)
 * el modulo de llama bl (buffer list) el cual sirve para hacer la conversion del buffer a un formato
-*legible.
+* mucho mas legible.
 */
-
 var http = require('http');
 var bl = require('bl');
 var Url = process.argv[2];
@@ -13,6 +11,7 @@ http.get(Url,function(respuesta){
 		console.log(data.length);
 		console.log(data.toString());
 		if(err)
+			console.log("Hola Mundo");
 			throw err;
 	}));
 });
