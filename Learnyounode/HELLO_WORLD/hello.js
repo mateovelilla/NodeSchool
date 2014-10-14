@@ -21,5 +21,4 @@ a las instrucciones del ejercicio no los resaltara, solo cuando las excepciones 
 
 
 */
-
 console.log("HELLO WORLD");
