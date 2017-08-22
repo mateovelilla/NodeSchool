@@ -4,14 +4,13 @@
 * de node.js (Asincrono), utilizando la función lectora de archivo en formato de callback. 
 */
 
-var Url = process.argv[2];
-var fs = require('fs');
-fs.readFile(Url,'utf8',function (err, data) {
-  	if (err){
-  		throw err;
-	} 
-	var buf = data.toString();
-	var num =  (buf.split('\n')).length - 1;
-	console.log(num);
+let url = process.argv[2];
+let fs = require('fs');
+fs.readFile(url,'utf8',(err, data) => {
+	if (err)
+		throw err; 
+	let buffer = data.toString();
+	let number =  (buffer.split('\n')).length - 1;
+	console.log(number);
 
 });

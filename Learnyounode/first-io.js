@@ -7,10 +7,8 @@
 *saltos de linea del archivo.
 */
 
-var Url = process.argv[2];
-var fs = require('fs');
-var buf = fs.readFileSync(Url);
-buf = buf.toString();
-console.log(
-	((buf.split('\n')).length) - 1
-);
+let url = process.argv[2]
+let fs = require('fs')
+let buffer = fs.readFileSync(url);
+let content = buffer.toString();
+console.log(((content.split('\n')).length) - 1)

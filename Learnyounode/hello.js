@@ -5,7 +5,7 @@ En este primer ejercicio en pocas palabras te dice que escribas con javascript
 un "Hola mundo", pero espeficamente tiene que estar escrita "HELLO WORLD".
 
 Tenemos que tener presente que NODE( de cariño ) es un entorno de desarrollo basado en javascript del lado
-de SERVIDOR y como todo servidor se maneja desde la terminal, a si que abramos nuestras terminales :D 
+de SERVIDOR, asi que abramos nuestras terminales :D 
 y despues de haber instalado node.js y el modulo de nodeschool learnyounode creamos un archivo con extension JS
 imprimiendo nuestro primer "HOLA MUNDO" con javascript. Existen 3 formas de verificar si el ejercicio funciona realmente:
 
