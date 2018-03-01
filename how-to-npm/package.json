@@ -1,0 +1,17 @@
+{
+  "name": "@mateovelilla/beginning",
+  "version": "1.0.3",
+  "main": "index.js",
+  "scripts": {
+    "test": "./test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "www.google.com"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "It's easy! :D",
+  "dependencies": {},
+  "devDependencies": {}
+}
