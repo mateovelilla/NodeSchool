@@ -3,5 +3,7 @@ function foo(){
 	quux = 'Hi!'
 	function zip () {
 		var quux
+		bar = true
 	}
+	return zip
 }
