@@ -1,3 +1,5 @@
+'use strict'
+
 let a = 1, b = 2, c = 3;
 (function firstFunction(){
 	let b = 5, c = 6;

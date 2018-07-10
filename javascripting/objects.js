@@ -1,3 +1,5 @@
+'use strict'
+
 let pizza = {
      toppings: ['cheese', 'sauce', 'pepperoni'],
      crust: 'deep dish',

@@ -1,3 +1,5 @@
+'use strict'
+
 function math(argOne, argTwo, argThree){
   return (argTwo*argThree)+argOne
 }

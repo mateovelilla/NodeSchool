@@ -1,4 +1,5 @@
-var example = "some string";
+'use strict'
 
+var example = "some string";
 console.log(example);
 
