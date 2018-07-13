@@ -1,14 +1,14 @@
 {
-  "name": "http-server",
+  "name": "httpcollect",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "httpCollect.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "mateovelilla <teovelilla@gmail.com>",
+  "author": "",
   "license": "ISC",
   "dependencies": {
-    "through2": "^2.0.3"
+    "bl": "^2.0.1"
   }
 }

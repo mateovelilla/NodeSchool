@@ -20,21 +20,3 @@ module.exports = ( route ,extension , callback) => {
 	})
 }
 
-/*
-Otra Forma de realizarlo:
-fs.readdir(Directorio,function(err,data){
-	if(err){
-		return callback(err);
-	}else{
-		data = data.filter(function (file) {
-      		return path.extname(file) === '.' + Extension
-    	})
-
-    	callback(null, data)
-
-		}	
-	}
-
-);
-
-*/

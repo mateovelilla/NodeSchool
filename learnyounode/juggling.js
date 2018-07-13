@@ -1,4 +1,5 @@
 'use strict'
+
 const http = require('http')
 let urls = process.argv.slice(2)
 function get(url) {

@@ -1,4 +1,5 @@
 'use strict';
+
 let through = require('through2')
 let stream = through(function(buffer, enconding, next){
 	let text = buffer.toString().toUpperCase()

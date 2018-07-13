@@ -1,13 +1,4 @@
-/*
-LEARN YOU THE NODE.JS FOR MUCH WIN!
-─────────────────────────────────────
-  FILTRADO LS 
-*El proposito de este ejercicio es abrir un folder y leer los archivo que se encuentran en el
-*capturando la extensión de cada archivo e imprimiendo solo los archivo que tienen extension ingresada por consola
-*nos dan como referencia 2 librerias de node que son fs(File system) y path que contiene utilidades
-*para la manipulación de rutas de archivos.
-* El metodo que mas nos interesa es path.extname() que nos retornara la extensión del archivo en la ruta indicda.
-*Debemos de tener encuenta que tendremos 2 parametros de entrada, el primero es la ruta y el segundo la extesion del archivo por debemos filtrar. Ademas de eso utilizaremos la funcion en formato de callback fs.readdir(); para leer el contenido del directorio, que como primer parametro recibe la ruta del folder*/
+'use strict'
 
 let fs = require('fs'),
 path = require('path');

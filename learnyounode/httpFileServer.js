@@ -1,4 +1,5 @@
 'use strict'
+
 let fs = require('fs'),
 	http = require('http'),
 	path = require('path'),

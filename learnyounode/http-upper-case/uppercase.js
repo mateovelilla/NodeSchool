@@ -1,3 +1,5 @@
+'use strict'
+
 let http = require('http'),
 	port = process.argv[2],
 	map = require('through2-map')
