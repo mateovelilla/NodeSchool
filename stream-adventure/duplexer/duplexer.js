@@ -1,9 +1,8 @@
 'use strict'
 const spawn = require('child_process').spawn
+const duplexer2 = require('duplexer2')
 module.exports = function(cmd,args) {
-	console.log(cmd)
 	let result = spawn(cmd,args)
-	result.stdout.on('data',(data) => {
-		process.stdout(data)
-	})
+	let duplex = duplexer2(result.stdin,result.stdout)
+	return duplex
 }
