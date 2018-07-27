@@ -1,9 +1,9 @@
-'use strict'
-let slice = Array.prototype.slice
-function add (title,message){
-	console.log(title, message)
+var slice = Array.prototype.slice
+
+function logger(namespace) {
+	  return function() {
+		      console.log.apply(console, [namespace].concat(slice.call(arguments)))
+		    }
 }
-function logger (namespace) {
-	return add(namespace)
-}
+
 module.exports = logger
