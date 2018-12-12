@@ -19,7 +19,7 @@ TODO:
  - [x] Bug Clinic
  - [x] Make Me Hapi
  - [ ] Browsery Adventure
- - [ ] Promise wont hurt
+ - [X] Promise wont hurt
  - [ ] Intro to webGl
  - [ ] Async you
  - [ ] Count to 6
