@@ -21,13 +21,13 @@ TODO:
  - [ ] Browsery Adventure
  - [X] Promise wont hurt
  - [ ] Intro to webGl
- - [ ] Async you
- - [ ] Count to 6
+ - [X] Async you
+ - [X] Count to 6
  - [ ] NodeBot Workshop
  - [ ] Kick of Koa
  - [ ] Going Native
  - [ ] LololoDash
- - [ ] Planet Proto
+ - [X] Planet Proto
  - [ ] Learn you couchDb
  - [ ] WebGl Workshop
  - [ ] LearnUv
