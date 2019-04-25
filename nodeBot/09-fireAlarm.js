@@ -1,32 +1,59 @@
-'use strict'
-const five = require('johnny-five')
-const board = new five.Board()
-board.on('ready',() => {
-    let temperature = new five.Thermometer(
-        {
-            controller: 'TMP36',
-            pin: 'A0'
-        }
-    )
-    let piezo = new five.Piezo(9)
-    let led = new five.Led(13)
-    let button = new five.Button
-    temperature.on('data', function () {
-        if(this.celsius > 50) {
-            led.strobe(1000);
-            piezo.play({
-                song: "C D F D A - A A A A G G G G - - C D F D G - G G G G F F F F - -",
-                beats: 1 / 4,
-                tempo: 100
-            });
-             
-        } else{
-            piezo.off()
-            led.stop().off();
-        }
-    })
-    button.on('press',() => {
-        piezo.off();
-        led.stop().off();
-    })
+var five = require('johnny-five')
+var board = new five.Board()
+
+board.on('ready', function () {
+  var piezo = new five.Piezo(9)
+  var led = new five.Led(13)
+  var btn = new five.Button(5)
+  var thermo = new five.Thermometer({
+    controller: 'TMP36',
+    pin: 'A0'
+  })
+
+  var threshold = 50
+  var isOnFire = false
+  var isReset = false
+
+  var sirenInterval = null
+
+  // Sound the alarm
+  function panic () {
+    if (isOnFire) return
+    isOnFire = true
+
+    led.strobe(1000)
+    piezo.tone(five.Piezo.Notes.c4, 750)
+    sirenInterval = setInterval(function () {
+      piezo.tone(five.Piezo.Notes.c4, 750)
+    }, 1000)
+  }
+
+  // Silence the things
+  function calm () {
+    if (!isOnFire) return
+    isOnFire = false
+
+    led.stop().off()
+    clearInterval(sirenInterval)
+    piezo.noTone()
+  }
+
+  // The reset button
+  btn.on('press', function () {
+    if (!isOnFire) return
+    isReset = true
+    calm()
+  })
+
+  // Watch the temp
+  thermo.on('change', function () {
+    if (this.celsius > threshold) {
+      if (!isReset) {
+        panic()
+      }
+    } else {
+      calm()
+      isReset = false // clear the reset flag when temp drops below threshold
+    }
+  })
 })
