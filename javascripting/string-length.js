@@ -1,4 +1,4 @@
 'use strict'
 
-var example = 'example string';
+const example = 'example string';
 console.log(example.length);

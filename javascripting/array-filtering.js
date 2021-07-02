@@ -1,8 +1,8 @@
 'use strict';
 
-let numbers = [1,2,3,4,5,6,7,8,9,10]
+const numbers = [1,2,3,4,5,6,7,8,9,10]
 
-let filtered = numbers.filter((number) => {
+const filtered = numbers.filter((number) => {
   return number % 2 === 0;
 })
 

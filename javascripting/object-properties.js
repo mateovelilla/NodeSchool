@@ -1,2 +1,2 @@
-let food = {types: 'only pizza'};
+const food = {types: 'only pizza'};
 console.log(food.types)
