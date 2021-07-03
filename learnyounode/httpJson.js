@@ -1,39 +1,35 @@
 'use strict'
 
-let http = require('http'),
-	url = require('url')
+const http = require('http');
 
 function parsetime (time) {
-      let objectDate = {
-	      'hour': time.getHours(),
-	      'minute': time.getMinutes(),
-	      'second': time.getSeconds()
-      }
-      return objectDate
+	return {
+		'hour': time.getHours(),
+		'minute': time.getMinutes(),
+		'second': time.getSeconds()
+	}
 }    
 
-function unixtime (time) {
-     let unixTimeObject = {
-	     'unixtime': time.getTime()
-     }
-     return unixTimeObject
+const unixtime = (time)=> {
+	return {
+		'unixtime': time.getTime()
+	}
 }
 
-let server = http.createServer((req, res) => {
-	let parsedUrl = url.parse(req.url, true)
-	let time = new Date(parsedUrl.query.iso)
+http.createServer((req, res) => {
+	let parsedUrl = new URL(req.url, 'http://fake.com')
+	let time = new Date(parsedUrl.searchParams.get('iso'))
 	let result
-      if (/^\/api\/parsetime/.test(req.url))
-	result = parsetime(time)
+	if (/^\/api\/parsetime/.test(req.url))
+		result = parsetime(time)
 	else if (/^\/api\/unixtime/.test(req.url))
 		result = unixtime(time)
 	if (result) {
-        	res.writeHead(200, { 'Content-Type': 'application/json' })
-        	res.end(JSON.stringify(result))
-      	} else {
-        	res.writeHead(404)
-        	res.end()
-      }
-    })
-server.listen(Number(process.argv[2]))
+		res.writeHead(200, { 'Content-Type': 'application/json' })
+		res.end(JSON.stringify(result))
+	} else {
+		res.writeHead(404)
+		res.end()
+	}
+}).listen(parseInt(process.argv[2]))
 

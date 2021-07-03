@@ -1,10 +1,10 @@
 'use strict'
 
 const net = require('net')
-let port = process.argv[2]
+const port = process.argv[2]
 
-function filter (dato) {
-	return (dato < 10 ? '0'+dato : dato)
+function filter (data) {
+	return (data < 10 ? `0${data}` : data)
 }
 
 let servidor = new net.Server( (socket) => {
@@ -19,4 +19,4 @@ let servidor = new net.Server( (socket) => {
 	socket.end()
 })
 
-servidor.listen(port)
+servidor.listen(port);

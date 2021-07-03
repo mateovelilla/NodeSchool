@@ -1,7 +1,7 @@
 'use strict'
 
-let url = process.argv[2]
-let fs = require('fs')
-let buffer = fs.readFileSync(url);
-let content = buffer.toString();
+const path = process.argv[2]
+const fs = require('fs')
+const buffer = fs.readFileSync(path);
+const content = buffer.toString();
 console.log(((content.split('\n')).length) - 1)

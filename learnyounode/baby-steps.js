@@ -1,7 +1,3 @@
 'use strict'
-var SumaValores = 0;
-for (var i = 2; i < process.argv.length; i++) {
-	SumaValores = SumaValores + Number(process.argv[i]);
-};
-
-console.log(SumaValores);
+let sum = process.argv.reduce((accu, current,index) => index > 1 ? accu + parseInt(current) : accu, 0)
+console.log(sum);
